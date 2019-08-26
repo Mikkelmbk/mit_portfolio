@@ -1,10 +1,19 @@
 var sliderInterval = "";
 document.addEventListener('DOMContentLoaded', () => {
+	let numberOfSlidesBeingDisplayed = 2;
+	
+	
+
+
+	
 
 	let contentWrapperElement = document.querySelector('.content-wrapper');
 	let sliderContainerElement = document.querySelector('.slider-container');
-	sliderContainerElement.style.width = (contentWrapperElement.offsetWidth - 20) + `px`; // using the contentwrapperelements width to determine how wide the visual container of the slider should be by using offsetWidth
 
+	viewportWidthDetection();
+
+	sliderContainerElement.style.width = (contentWrapperElement.offsetWidth - 20) + `px`; // using the contentwrapperelements width to determine how wide the visual container of the slider should be by using offsetWidth
+	
 
 	let variableSliderWidth = contentWrapperElement.offsetWidth - 20; // giving the variablesliderwidth the same width as the visual slider container to later use that width to divide by the amount of images you want shown in the visual slider
 	let sliderItemElements = document.querySelectorAll('.slider-item');
@@ -12,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	sliderItemElements.forEach((sliderItemElement) => {
-		sliderItemElement.style.width = variableSliderWidth / 3 + `px`; // dividing variablesliderwidth by 3 to display 3 images on the visual slider
+		sliderItemElement.style.width = variableSliderWidth / numberOfSlidesBeingDisplayed + `px`; // dividing variablesliderwidth by 3 to display 3 images on the visual slider
 
 	})
 
-	sliderSizeRegulatorElement.style.width = ((variableSliderWidth / 3) * sliderItemElements.length) + `px`; // finds the width of a single slider item and times it by the amount of slider items in total to give the hiden slider-item container it's width.
+	sliderSizeRegulatorElement.style.width = ((variableSliderWidth / numberOfSlidesBeingDisplayed) * sliderItemElements.length) + `px`; // finds the width of a single slider item and times it by the amount of slider items in total to give the hiden slider-item container it's width.
 
 	slideImagesByInterval();
 	
@@ -52,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function slideImagesByInterval() {
 
-		let sliderMovedDistance = variableSliderWidth / 3;
+		let sliderMovedDistance = variableSliderWidth / numberOfSlidesBeingDisplayed;
 
 		sliderInterval = setInterval(() => {
 			sliderSizeRegulatorElement.style.transition = "all 0.3s";
@@ -60,6 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		}, 2500)
 
+	}
+
+
+	function viewportWidthDetection(){
+		let viewportWidth1000 = window.matchMedia("(min-width: 1000px)");
+		let viewportWidth550 = window.matchMedia("(max-width: 550px)");
+		if(viewportWidth1000.matches){
+			numberOfSlidesBeingDisplayed = 3; // Post 1000px;
+		}	
+		else{
+			numberOfSlidesBeingDisplayed = 2; // Sub 1000px, Post 550px;
+			sliderContainerElement.style.height = 240+'px';
+		}
+	
+		if(viewportWidth550.matches){
+			numberOfSlidesBeingDisplayed = 1; // Sub 550px;
+			sliderContainerElement.style.height = 210+'px';
+		}
 	}
 
 })
