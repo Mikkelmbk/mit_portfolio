@@ -1,0 +1,50 @@
+.slider-container{
+	margin: 0 10px 15px 10px;
+	/* padding: 0px 10px; */
+	height:265px;
+	/* background-color:grey; */
+	/* display:grid; */
+	/* grid-template-columns: 1fr 1fr 1fr; */
+	list-style-type:none;
+	/* width:1374px; */
+	overflow:hidden;
+}
+
+.slider-size-regulator{
+	height:100%;
+	overflow:hidden;
+	display:flex;
+	
+	
+}
+
+.slider-item{
+	height:100%;
+	/* display:flex;
+	padding:20px;
+	justify-content:flex-end;
+	align-items:flex-end; */
+	position:relative;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+.featured-movie-name{
+	position:absolute;
+	bottom:0;
+	right:25px;
+	background-color:rgb(59, 121, 214);
+	padding:4px 6px;
+	border-radius:3px;
+	color:white;
+	font-size:14px;
+	font-weight:400;
+}
+
+.slider-image{
+	width:100%;
+
+
+
+}
