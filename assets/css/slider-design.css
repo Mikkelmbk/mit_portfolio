@@ -1,12 +1,7 @@
 .slider-container{
 	margin: 0 10px 15px 10px;
-	/* padding: 0px 10px; */
 	height:265px;
-	/* background-color:grey; */
-	/* display:grid; */
-	/* grid-template-columns: 1fr 1fr 1fr; */
 	list-style-type:none;
-	/* width:1374px; */
 	overflow:hidden;
 }
 
@@ -14,16 +9,10 @@
 	height:100%;
 	overflow:hidden;
 	display:flex;
-	
-	
 }
 
 .slider-item{
 	height:100%;
-	/* display:flex;
-	padding:20px;
-	justify-content:flex-end;
-	align-items:flex-end; */
 	position:relative;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -44,7 +33,4 @@
 
 .slider-image{
 	width:100%;
-
-
-
 }

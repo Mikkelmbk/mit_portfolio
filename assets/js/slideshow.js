@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	
 
-	let contentWrapperElement = document.querySelector('.content-wrapper');
+	let contentWrapperElement = document.querySelector('.slider-content-wrapper');
 	let sliderContainerElement = document.querySelector('.slider-container');
 
 	viewportWidthDetection();

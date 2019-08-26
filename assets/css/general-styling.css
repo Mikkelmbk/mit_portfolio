@@ -1,0 +1,10 @@
+.reset{
+	margin:0;
+	background-color:#111;
+}
+
+.header{
+	height:65px;
+	background-color:rgb(43, 43, 43);
+	margin-bottom:10px;
+}
