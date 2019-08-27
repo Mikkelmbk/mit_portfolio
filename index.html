@@ -6,13 +6,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="assets/css/general-styling.css">
+	<link rel="stylesheet" href="assets/css/theme-switch.css">
 	<link rel="stylesheet" href="assets/css/slider-design.css">
+	<link id="theme-provider" rel="stylesheet" href="assets/css/dark-theme.css">
 	<title>Mikkel's Portfolio</title>
 </head>
 
 <body class="reset">
 
 	<header class="header">
+		<div class="theme-container">
+				<p class="switch-text">Change Theme</p>
+				<input type="checkbox" id="toggle" class="checkbox" />
+				<label for="toggle" class="switch"></label>
+		</div>
 		
 
 
@@ -56,6 +63,7 @@
 
 	<script src="assets/js/script.js"></script>
 	<script src="assets/js/slideshow.js"></script>
+	<script src="assets/js/theme-switch.js"></script>
 </body>
 
 </html>
