@@ -1,12 +1,15 @@
+let switchControl = 0;
 document.addEventListener('DOMContentLoaded',()=>{
-
     let themeSwitchElement = document.querySelector('.switch');
-    let switchControl = 0;
-
     let themeProviderElement = document.querySelector('#theme-provider');
-    console.log(themeProviderElement);
+    themeDisplayed();
+
 
     themeSwitchElement.addEventListener('click',()=>{
+        themeDisplayed();
+    })
+
+    function themeDisplayed(){
         if(switchControl == 0){
             themeProviderElement.href = "assets/css/light-theme.css";
             switchControl = 1;
@@ -15,8 +18,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             themeProviderElement.href = "assets/css/dark-theme.css";
             switchControl = 0;
         }
-    })
-
+    }
 
 
 });
