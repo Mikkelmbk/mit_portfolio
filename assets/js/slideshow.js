@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if(sliderSizeRegulatorElement.childNodes[0].nodeName == "#text"){
 				sliderSizeRegulatorElement.removeChild(sliderSizeRegulatorElement.childNodes[0]);
 				let firstChild = sliderSizeRegulatorElement.removeChild(sliderSizeRegulatorElement.childNodes[0]);
-				console.log(sliderSizeRegulatorElement.childNodes);
+				// console.log(sliderSizeRegulatorElement.childNodes);
 				sliderSizeRegulatorElement.insertAdjacentElement('beforeend', firstChild);
 				sliderSizeRegulatorElement.style.marginLeft = 0;
 			}
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if(sliderSizeRegulatorElement.childNodes[0].nodeName != "#text"){
 				// console.log("Hej Med Dig");
 				let firstChild = sliderSizeRegulatorElement.removeChild(sliderSizeRegulatorElement.childNodes[0]);
-				console.log(sliderSizeRegulatorElement.childNodes);
+				// console.log(sliderSizeRegulatorElement.childNodes);
 				sliderSizeRegulatorElement.insertAdjacentElement('beforeend', firstChild);
 				sliderSizeRegulatorElement.style.marginLeft = 0;
 			}
