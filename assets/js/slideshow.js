@@ -1,23 +1,24 @@
-var sliderInterval = "";
 document.addEventListener('DOMContentLoaded', () => {
+	
+	
+	
+	
+	
+	
+	var sliderInterval = "";
 	let numberOfSlidesBeingDisplayed = 2;
 	
-	
-
-
-	
-
 	let contentWrapperElement = document.querySelector('.slider-content-wrapper');
 	let sliderContainerElement = document.querySelector('.slider-container');
+	let sliderItemElements = document.querySelectorAll('.slider-item');
+	let sliderSizeRegulatorElement = document.querySelector('.slider-size-regulator');
 
 	viewportWidthDetection();
-
 	sliderContainerElement.style.width = (contentWrapperElement.offsetWidth - 20) + `px`; // using the contentwrapperelements width to determine how wide the visual container of the slider should be by using offsetWidth
 	
 
 	let variableSliderWidth = contentWrapperElement.offsetWidth - 20; // giving the variablesliderwidth the same width as the visual slider container to later use that width to divide by the amount of images you want shown in the visual slider
-	let sliderItemElements = document.querySelectorAll('.slider-item');
-	let sliderSizeRegulatorElement = document.querySelector('.slider-size-regulator');
+	
 
 
 	sliderItemElements.forEach((sliderItemElement) => {
