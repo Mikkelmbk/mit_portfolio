@@ -12,12 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	let sliderContainerElement = document.querySelector('.slider-container');
 	let sliderItemElements = document.querySelectorAll('.slider-item');
 	let sliderSizeRegulatorElement = document.querySelector('.slider-size-regulator');
-
+	let variableSliderWidth = contentWrapperElement.offsetWidth - 20; // giving the variablesliderwidth the same width as the visual slider container to later use that width to divide by the amount of images you want shown in the visual slider
 	viewportWidthDetection();
 	sliderContainerElement.style.width = (contentWrapperElement.offsetWidth - 20) + `px`; // using the contentwrapperelements width to determine how wide the visual container of the slider should be by using offsetWidth
 	
-
-	let variableSliderWidth = contentWrapperElement.offsetWidth - 20; // giving the variablesliderwidth the same width as the visual slider container to later use that width to divide by the amount of images you want shown in the visual slider
 	
 
 
@@ -41,22 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 		sliderSizeRegulatorElement.addEventListener('transitionend', () => {
 			sliderSizeRegulatorElement.style.transition = "unset";
-
 			if(sliderSizeRegulatorElement.childNodes[0].nodeName == "#text"){
 				sliderSizeRegulatorElement.removeChild(sliderSizeRegulatorElement.childNodes[0]);
 				let firstChild = sliderSizeRegulatorElement.removeChild(sliderSizeRegulatorElement.childNodes[0]);
-				// console.log(sliderSizeRegulatorElement.childNodes);
 				sliderSizeRegulatorElement.insertAdjacentElement('beforeend', firstChild);
 				sliderSizeRegulatorElement.style.marginLeft = 0;
+				return;
 			}
 
-			if(sliderSizeRegulatorElement.childNodes[0].nodeName != "#text"){
-				// console.log("Hej Med Dig");
-				let firstChild = sliderSizeRegulatorElement.removeChild(sliderSizeRegulatorElement.childNodes[0]);
-				// console.log(sliderSizeRegulatorElement.childNodes);
-				sliderSizeRegulatorElement.insertAdjacentElement('beforeend', firstChild);
-				sliderSizeRegulatorElement.style.marginLeft = 0;
-			}
+			let firstChild = sliderSizeRegulatorElement.removeChild(sliderSizeRegulatorElement.childNodes[0]);
+			sliderSizeRegulatorElement.insertAdjacentElement('beforeend', firstChild);
+			sliderSizeRegulatorElement.style.marginLeft = 0;
+	
 
 		})
 
